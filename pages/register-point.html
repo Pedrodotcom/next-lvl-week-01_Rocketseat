@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoleta - Registro</title>
+    <link rel="icon" href="https://i7.pngguru.com/preview/532/354/478/recycling-bin-waste-container-recycling-symbol-recycle-png.jpg">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/register-point.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+</head>
+<body>
+    <div id="page-register-point">    
+            <header>
+                <img src="../assets/icons/logo.svg" alt="Ecoleta">
+        
+                <h2>
+                    <a href="./index.html">
+                        <span></span>
+                        Voltar para a HOME
+                    </a>
+                </h2>
+            </header>
+
+            <form action="#">
+
+                <h1>Cadastro do ponto de coleta</h1>
+
+                <fieldset>
+                    <legend>
+                        <h2>Dados da entidade</h2>
+                    </legend>
+
+                    <div class="field">
+                        <label for="name">Nome da entidade</label>
+                        <input type="text" name="name">
+                    </div>
+
+                    <div class="field-group">
+                        <div class="field">
+                            <label for="adress">Endereço</label>
+                            <input type="text" name="adress">
+                        </div>
+                        <div class="field">
+                            <label for="adressComplement">Número/Complemento</label>
+                            <input type="text" name="adressComplement">
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <div class="field">
+                            <label for="uf">Estado</label>
+                            <select name="uf">
+                                <option value="">Selecione o estado</option>
+                            </select>
+                            <input type="hidden" name="estado">
+                        </div>
+                        <div class="field">
+                            <label for="cities">Cidade</label>
+                            <select name="cities" disabled>
+                                <option value="">Selecione a cidade</option>
+                            </select>
+                            <input type="hidden" name="cidade">
+                        </div>
+                    </div>
+
+                    
+                </fieldset>
+
+                <fieldset>
+                    <legend>
+                        <h2>Itens de coleta</h2>
+                    </legend>
+                </fieldset>
+
+                <button type="submit">Cadastrar</button>
+
+            </form>
+    </div>
+    <script src="../scripts/register-point.js"></script>
+</body>
+</html>

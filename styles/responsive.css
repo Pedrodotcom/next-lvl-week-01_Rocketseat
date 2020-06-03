@@ -1,0 +1,38 @@
+@media (max-width: 1100px) {
+    #page-home {
+        background-position: right -120px bottom -100px;
+    }
+}
+
+@media (max-width: 1040px) {
+    #page-home {
+        background-position: right -1000px;
+    }
+
+    #page-home .content {
+        align-items: center;
+        text-align: center;
+    }
+
+    #page-home .content header a {
+        position: absolute;
+        bottom: 48px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #page-home .content main {
+        align-items: center;
+    }
+
+    #page-home .content main a {
+        margin-top: 20px;
+    }
+}
+
+@media (max-height: 600px) {
+
+    #page-home {
+        background-position: right -1000px;
+    }
+}
