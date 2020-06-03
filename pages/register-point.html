@@ -33,31 +33,31 @@
 
                     <div class="field">
                         <label for="name">Nome da entidade</label>
-                        <input type="text" name="name">
+                        <input type="text" name="name" required>
                     </div>
 
                     <div class="field-group">
                         <div class="field">
                             <label for="adress">Endereço</label>
-                            <input type="text" name="adress">
+                            <input type="text" name="adress" required>
                         </div>
                         <div class="field">
                             <label for="adressComplement">Número/Complemento</label>
-                            <input type="text" name="adressComplement">
+                            <input type="text" name="adressComplement" required>
                         </div>
                     </div>
 
                     <div class="field-group">
                         <div class="field">
                             <label for="uf">Estado</label>
-                            <select name="uf">
+                            <select name="uf" required>
                                 <option value="">Selecione o estado</option>
                             </select>
                             <input type="hidden" name="estado">
                         </div>
                         <div class="field">
                             <label for="cities">Cidade</label>
-                            <select name="cities" disabled>
+                            <select name="cities" disabled required>
                                 <option value="">Selecione a cidade</option>
                             </select>
                             <input type="hidden" name="cidade">
@@ -69,9 +69,43 @@
 
                 <fieldset>
                     <legend>
-                        <h2>Itens de coleta</h2>
+                        <h2>Ítens de coleta</h2>
                     </legend>
+
+                    <ul class="items-grid">
+                        <li data-id="1">
+                            <img src="../assets/icons/lampadas.svg" alt="Lâmpadas">
+                            <span>Lâmpadas</span>
+                        </li>
+
+                        <li data-id="2">
+                            <img src="../assets/icons/baterias.svg" alt="Pilhas e Baterias">
+                            <span>Pilhas e Baterias</span>
+                        </li>
+
+                        <li data-id="3">
+                            <img src="../assets/icons/papeis-papelao.svg" alt="Papel e Papelão">
+                            <span>Papel e Papelão</span>
+                        </li>
+
+                        <li data-id="4">
+                            <img src="../assets/icons/eletronicos.svg" alt="Resíduos Eletrônicos">
+                            <span>Resíduos Eletrônicos</span>
+                        </li>
+
+                        <li data-id="5">
+                            <img src="../assets/icons/organicos.svg" alt="Resíduos Orgânicos">
+                            <span>Resíduos Orgânicos</span>
+                        </li>
+
+                        <li data-id="6">
+                            <img src="../assets/icons/oleo.svg" alt="Óleo de Cozinha">
+                            <span>Óleo de Cozinha</span>
+                        </li>
+                    </ul>
+
                 </fieldset>
+                <input type="hidden" name="items">
 
                 <button type="submit">Cadastrar</button>
 

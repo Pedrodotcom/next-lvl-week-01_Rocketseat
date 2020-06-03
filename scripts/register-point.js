@@ -1,41 +1,63 @@
-const ufSelectEl = document.querySelector('[name=uf]');
-const estado = document.querySelector('[name=estado]');
+// API IBGE
 
-const citySelectEl = document.querySelector('[name=cities]');
-const cidade = document.querySelector('[name=cidade]');
+    const ufSelectEl = document.querySelector('[name=uf]');
+    const estado = document.querySelector('[name=estado]');
 
-const linkApiIBGE = (path, select) => {
-    fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados${path}?orderBy=nome`)
-        .then( response => response.json() )
-        .then( data => {
-            for( item of data) {
-                select.innerHTML += `<option value="${item.id}">${item.nome}</option>`;
-            };
-        }).catch( err => {
-            alert("[ERRO] Recarregue a página e tente novamente!");
-            console.warn(`Erro na API - IBGE - ${err}`);
-        })
-}
+    const citySelectEl = document.querySelector('[name=cities]');
+    const cidade = document.querySelector('[name=cidade]');
 
-const writeInputValues = (event, subject) => {
-    const indexOfSelectedList = event.target.selectedIndex;
-    subject.value = event.target.options[indexOfSelectedList].text;
-};
+    const linkApiIBGE = (path, select) => {
+        fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados${path}?orderBy=nome`)
+            .then( response => response.json() )
+            .then( data => {
+                for( item of data) {
+                    select.innerHTML += `<option value="${item.id}">${item.nome}</option>`;
+                };
+            }).catch( err => {
+                alert("[ERRO] Recarregue a página e tente novamente!");
+                console.warn(`Erro na API - IBGE - ${err}`);
+            })
+    }
 
-linkApiIBGE("", ufSelectEl);
+    const writeInputValues = (event, subject) => {
+        const indexOfSelectedList = event.target.selectedIndex;
+        subject.value = event.target.options[indexOfSelectedList].text;
+    };
 
-ufSelectEl.onchange = function getCities(event) {
-    const ufValue = event.target.value;
-    writeInputValues(event, estado);
+    linkApiIBGE("", ufSelectEl);
 
-    citySelectEl.disabled = false;
-    linkApiIBGE(`/${ufValue}/municipios`, citySelectEl);
-}
+    ufSelectEl.onchange = function getCities(event) {
+        const ufValue = event.target.value;
+        writeInputValues(event, estado);
 
-citySelectEl.onchange = event => {
-    writeInputValues(event, cidade);
-}
+        citySelectEl.disabled = false;
+        citySelectEl.innerHTML = `<option value="">Selecione a cidade</option>`
+        linkApiIBGE(`/${ufValue}/municipios`, citySelectEl);
+    }
 
+    citySelectEl.onchange = event => {
+        writeInputValues(event, cidade);
+    }
 
+// Itens de coleta
 
+let selectedItems = [];
+const itemsToCollect = document.querySelectorAll('.items-grid li');
+const itemsInput = document.querySelector('[name=items]');
 
+    for(item of itemsToCollect) {
+        item.onclick = event => {
+            const itemLi = event.target;
+                itemLi.classList.toggle('selected');
+
+            const itemId = itemLi.dataset.id;
+                if(selectedItems.indexOf(itemId) == -1) {
+                    selectedItems.push(itemId);
+                } else {
+                    selectedItems.splice(selectedItems.indexOf(itemId), 1);
+                };
+
+            itemsInput.value = selectedItems.sort();
+        };
+    };
+    

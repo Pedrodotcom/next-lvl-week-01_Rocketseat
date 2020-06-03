@@ -103,3 +103,45 @@
     background-color: #2fb86e;
     cursor: pointer;
 }
+
+#page-register-point form .items-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    list-style: none;
+}
+
+#page-register-point form .items-grid li {
+    background-color: #f5f5f5;
+    border: 2px solid #f5f5f5;
+    border-radius: 8px;
+    height: 180px;
+    padding: 32px 24px 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: center;
+    cursor: pointer;
+}
+
+#page-register-point form .items-grid li.selected{
+    border: 2px solid #34cb79;
+    background-color: #e1faec;
+}
+
+#page-register-point form .items-grid li span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: var(--title-color);
+    margin-top: 10px;
+}
+
+#page-register-point form .items-grid li img, span {
+    pointer-events: none;
+}
+
+
