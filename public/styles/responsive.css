@@ -1,5 +1,5 @@
 @media (max-width: 600px) {
-    #page-search-results header a h2 {
+    header a h2 {
         display: none;
     }
 
@@ -11,9 +11,17 @@
 }
 
 @media (max-width: 900px){
-    #page-search-results main .cards {
+    #page-search-results main .cards, #page-register-point form .items-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    #page-register-point .field-group {
+        flex-direction: column;
+    }
+
+    #page-register-point .field-group .field + .field {
+        margin-left: 0;
+    } 
 }
 
 @media (max-width: 1040px) {

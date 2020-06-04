@@ -41,9 +41,19 @@
 
 // Itens de coleta
 
+const images = [
+    "https://images.pexels.com/photos/1495580/pexels-photo-1495580.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/698485/pexels-photo-698485.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/1555199/pexels-photo-1555199.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://images.pexels.com/photos/719399/pexels-photo-719399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+    "https://cdn4.ecycle.com.br/cache/images/50-650-lixo-organico.jpg",
+    "https://cdn4.ecycle.com.br/cache/images/materias/Nomundo/2013-05/50-750-garrafas.jpg"
+]
+
 let selectedItems = [];
 const itemsToCollect = document.querySelectorAll('.items-grid li');
 const itemsInput = document.querySelector('[name=items]');
+const itemsImages = document.querySelector('[name=picture-items]');
 
     for(item of itemsToCollect) {
         item.onclick = event => {
@@ -58,6 +68,12 @@ const itemsInput = document.querySelector('[name=items]');
                 };
 
             itemsInput.value = selectedItems.sort();
+            
+            // Inserindo uma imagem aleatória de um dos itens coletados
+
+            let imagesToSelect = selectedItems.map(item => item - 1);
+                let randomIndex = imagesToSelect[parseInt(Math.random() * imagesToSelect.length)];
+            itemsImages.value = images[randomIndex];
         };
     };
     

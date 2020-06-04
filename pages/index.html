@@ -1,25 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecoleta</title>
-    <link rel="icon" href="https://i7.pngguru.com/preview/532/354/478/recycling-bin-waste-container-recycling-symbol-recycle-png.jpg">
-    <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/home.css">
-    <link rel="stylesheet" href="../styles/modal.css">
-    <link rel="stylesheet" href="../styles/responsive.css">
-</head>
-<body>
-    <div id="page-home">
+{% extends "templates/layout.html" %}
 
+{% set title = "Ecoleta" %}
+{% set pageId = "page-home" %}
+
+    {% block styles %}
+        <link rel="stylesheet" href="../styles/home.css">
+        <link rel="stylesheet" href="../styles/modal.css">
+    {% endblock styles %}
+
+    {% block content %}
         <div class="content">
     
             <header>
-                <img src="../assets/icons/logo.svg" alt="Ecoleta">
+                <img src="/assets/icons/logo.svg" alt="Ecoleta">
         
                 <h2>
-                    <a href="./register-point.html">
+                    <a href="/register">
                         <span></span>
                         Cadastre seu ponto de coleta
                     </a>
@@ -33,29 +29,13 @@
         
                 <a href="#"><span></span><strong>Pesquisar ponto de coleta</strong></a>
             </main>
-
         </div>
+    {% endblock content %}
 
-    </div>
+    {% block modal %}
+        {% include "templates/modal.html" %}
+    {% endblock modal %}
 
-    <div id="modal" class="hide">
-        <div class="content">
-            <header>
-                <h1>Pontos de Coleta</h1>
-                <a href="#">Fechar</a>
-            </header>
-            <form action="./search-results.html">
-                <label for="search">Digite a cidade:</label>
-                <div class="field-search">
-                    <input type="text" name="search" autofocus>
-                    <button type="submit">
-                        <img src="../assets/icons/search.svg" alt="Buscar">
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <script src="../scripts/modal.js"></script>
-</body>
-</html>
+    {% block scripts %}
+        <script src="/scripts/modal.js"></script>
+    {% endblock scripts %}
