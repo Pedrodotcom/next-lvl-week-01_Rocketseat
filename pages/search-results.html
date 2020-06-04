@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da busca</title>
+    <link rel="icon" href="https://i7.pngguru.com/preview/532/354/478/recycling-bin-waste-container-recycling-symbol-recycle-png.jpg">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/search-results.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
+</head>
+<body>
+    <div id="page-search-results">    
+            <header>
+                <img src="../assets/icons/logo.svg" alt="Ecoleta">
+        
+                    <a href="./index.html">
+                        <span></span>
+                        Voltar para a HOME
+                    </a>
+            </header>
+
+            <main>
+                <h4>
+                    <strong>2 pontos</strong> encontrados
+                </h4>
+                <div class="cards">
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/2547565/pexels-photo-2547565.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="{{site.name}}">
+                        <h1>{{site.name}}</h1>
+                        <h3>{{site.items}}</h3>
+                        <p>
+                            {{site.cidade}}, {{site.estado}} <br>
+                            {{site.adress}} <br>
+                            nº {{site.adressComplement}}
+                        </p>
+                    </div>
+                </div>
+            </main>
+    </div>
+</body>
+</html>
