@@ -8,6 +8,10 @@
         flex-direction: column;
         margin: auto;
     }
+
+    #page-search-results main .cards .card {
+        margin: 25px auto
+    }
 }
 
 @media (max-width: 900px){

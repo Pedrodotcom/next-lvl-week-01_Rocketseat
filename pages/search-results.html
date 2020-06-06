@@ -13,20 +13,26 @@
 
         <main>
             <h4>
-                <strong>2 pontos</strong> encontrados
+                <strong>{{sites.length}} pontos</strong> encontrados
             </h4>
             <div class="cards">
+                {% for site in sites %}
                 <div class="card">
-                    <img src="https://images.pexels.com/photos/2547565/pexels-photo-2547565.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="{{site.name}}">
+                    <img alt="{{site.name}}">
                     <h1>{{site.name}}</h1>
                     <h3>{{site.items}}</h3>
                     <p>
                         {{site.cidade}}, {{site.estado}} <br>
                         {{site.adress}} <br>
-                        nº {{site.adressComplement}}
+                        {{site.adressComplement}}
                     </p>
                 </div>
+                {% endfor %}
             </div>
         </main>
 
     {% endblock content %}
+
+    {% block scripts %}
+        <script src="/scripts/search-results.js"></script>
+    {% endblock scripts %}
