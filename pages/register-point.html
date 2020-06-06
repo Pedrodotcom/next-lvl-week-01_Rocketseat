@@ -5,6 +5,7 @@
 
     {% block styles %}
         <link rel="stylesheet" href="/styles/register-point.css">
+        <link rel="stylesheet" href="/styles/modal.css">
     {% endblock styles %}
 
     {% block content %}
@@ -103,6 +104,14 @@
         </form>
 
     {% endblock content %}
+    
+   
+    {% block modal %}
+        {% if saved %}
+            {% include "templates/confirmed-register.html" %}
+        {% endif %}
+    {% endblock modal %}
+   
 
     {% block scripts %}
         <script src="/scripts/register-point.js"></script>
