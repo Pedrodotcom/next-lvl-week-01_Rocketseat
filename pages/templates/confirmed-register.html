@@ -1,10 +1,20 @@
 <div id="modal" class="confirm">
+    {% if saved %}
     <div class="content">
-        <img src="/assets/icons/check.svg" alt="Cadastro concluído">
+        <img onload="redirectUser('/')" src="/assets/icons/check.svg" alt="Cadastro concluído">
         <h1>Cadastro concluído</h1>
     </div>
+    {% else %}
+    <div class="content">
+        <img onload="redirectUser('/register')" src="/assets/icons/error.svg" alt="Cadastro concluído">
+        <h1>Erro no cadastro. <br> Tente novamente.</h1>
+    </div>
+    {% endif %}
 </div>
 
 <script>
-    setTimeout(() => window.location = '/' , 2000)
+    function redirectUser(whereTo) {
+        console.log(whereTo)
+        setTimeout( () => window.location = whereTo, 2000)
+    }
 </script> 
